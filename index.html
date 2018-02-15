@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Ifidon</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <head>
+  <title>
+    Earned Value Management Calculator
+  </title>
+</head>
+<body>
+  <h2>Simple EVM Calculator for Project Managers</h2>
+  <section>
+    <div id="input">
+      <form>
+        <fieldset>
+          <legend>Input Data</legend>        
+          <label for="pv">Planned Value (PV/BCWS):</label>
+          <input id="pv" type="number" required><br><br>
+          <label for="ac">Actual Cost (AC/ACWP):</label>
+          <input id="ac" type="number" required><br><br>
+          <label for="ev">Earned Value (EV/BCWP):</label>
+          <input id="ev" type="number" required><br><br>
+          <label for="addinfo">Additional Info?</label>
+          
+          <input id="chbac" type="checkbox" value="bac" onchange="checkforbac()">BAC Available &nbsp
+          <input id="chetc" type="checkbox" value="etc" onchange="checkforetc()">ETC Available<br><br>
+          
+          <label for="bac">Budget at Completion (BAC):</label>
+          <input id="bac" type="number" value="" hidden><br><br>
+          <label for="etc">Estimate To Completion (ETC):</label>
+          <input id="etc" type="number" hidden><br><br>
+          <input type="button" value="Analyze Project" onclick="doEva()">
+        </fieldset>
+      </form>
+    </div><br>
+    <div id="output">
+      <fieldset>
+        <legend>Output(Variance Analysis)</legend>
+        <p>Schedule Variance(SV):</p><span id="sv"></span><br>
+        <p>Cost Variance(CV):</p><span id="cv"></span><br>
+      </fieldset><br>
+      
+      <fieldset>
+        <legend>Output(Performance Indexes)</legend>
+        <p>Schedule Performance Index(SPI):</p><span id="spi"></span><br>
+        <p>Cost Performance Index(CPI):</p><span id="cpi"></span><br>
+      </fieldset><br>
+      
+      <fieldset>
+        <legend>Output(EVM Estimates)</legend>
+        <p>Estimate At Completion(EAC)<sup>at current spend rate</sup>:</p><span id="eac1"></span><br>
+        <p>Estimate At Completion(EAC)<sup>at original forcasted spend rate</sup>:</p><span id="eac2"></span><br>
+        <p>Estimate At Completion(EAC)<sup>if current cost & schedule performance will impact future performance</sup>:</p><span id="eac3"></span><br>
+        <p>Estimate At Completion(EAC)<sup>if initial forcasts are wrong</sup>:</p><span id="eac4"></span><br>
+        <p>Variance at Completion(VAC):</p><span id="vac"></span><br>
+        <p>To Complete Performance Index(TCPI):</p><span id="tcpi"></span><br>
+      </fieldset><br>
+    <div>
+  <section>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
