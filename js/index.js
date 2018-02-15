@@ -19,11 +19,11 @@ function checkforetc() {
 }
 
 function doEva() {  
-var pv =  document.getElementById("pv").value;
-var ac =  document.getElementById("ac").value;
-var ev =  document.getElementById("ev").value;
-var bac=  document.getElementById("bac").value;
-var etc =   document.getElementById("etc").value;
+var pv =  parseInt(document.getElementById("pv").value);
+var ac =  parseInt(document.getElementById("ac").value);
+var ev =  parseInt(document.getElementById("ev").value);
+var bac =  parseInt(document.getElementById("bac").value);
+var etc =   parseInt(document.getElementById("etc").value);
  // variance analysis 
  var sv = ev - pv;
  var cv = ev - ac;
@@ -39,7 +39,7 @@ var etc =   document.getElementById("etc").value;
   // end of performance analysis
   
   // calculation of estimates
- if ((bac == null)||(bac == 0)) {
+ if ((bac = null)||(bac = 0)) {
    var eac1 ="No BAC data input";
    var eac2 ="No BAC data input";
    var eac3 ="No BAC data input";
@@ -49,17 +49,18 @@ var etc =   document.getElementById("etc").value;
  }
   else {
         eac1 = bac/cpi; //at cuttent spend rate
-        eac2 = (ac + (bac - ev)); //at original forcasted ammount
+        eac2 = ac + (bac-ev); //at original forcasted ammount
         eac3 = ac + ((bac-ev)/(spi*cpi)); //if current cost & schedule performance will impact future cost performance
         eac4 = ac + etc;
         vac = bac-eac1;
-        tcpi = ((bac-ev)/(bac-ac));
-      };  
+        tcpi = (bac-ev)/(bac-ac);
+      }  
   document.getElementById("eac1").innerHTML = eac1;
   document.getElementById("eac2").innerHTML = eac2;
   document.getElementById("eac3").innerHTML = eac3;
   document.getElementById("eac4").innerHTML = eac4;  
   document.getElementById("vac").innerHTML = vac;  
   document.getElementById("tcpi").innerHTML = tcpi;
+  console.log(parseInt(av))
 }
 // end eac calculations
