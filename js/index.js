@@ -8,7 +8,7 @@ function checkforbac() {
   }
 }
 
-function checkforetc() {  
+function checkforetc() {
   var chetc = document.getElementById("chetc")
   if(chetc.checked){
   document.getElementById("etc").hidden = false;
@@ -18,20 +18,20 @@ function checkforetc() {
   }
 }
 
-function doEva() {  
+function doEva() {
 var pv =  parseInt(document.getElementById("pv").value);
 var ac =  parseInt(document.getElementById("ac").value);
 var ev =  parseInt(document.getElementById("ev").value);
 var bac = parseInt(document.getElementById("bac").value);
 var etc = parseInt(document.getElementById("etc").value);
- // variance analysis 
+ // variance analysis
  var sv = ev - pv;
  var cv = ev - ac;
   document.getElementById("sv").innerHTML = sv;
   document.getElementById("cv").innerHTML = cv;
   // end of variance analysis
-  
- // calculate perfomance indexes 
+
+ // calculate perfomance indexes
   var spi = ev/pv;
   var cpi = ev/ac;
   document.getElementById("spi").innerHTML = spi;
@@ -40,12 +40,12 @@ var etc = parseInt(document.getElementById("etc").value);
   console.log(bac)
   // calculation of estimates
  if ((bac == 0)||(bac==null) ||(isNaN(bac))) {
-   var eac1 = 0;
-   var eac2 ="No BAC data input";
-   var eac3 ="No BAC data input";
+   var eac1 ="No BAC input data";
+   var eac2 ="No BAC input data";
+   var eac3 ="No BAC input data";
    // var eac4 ="No BAC data input";
-   var vac = "No BAC data input";
-   var tcpi ="No BAC data input";
+   var vac = "No BAC input data";
+   var tcpi ="No BAC input data";
  }
   else {
         eac1 = bac/cpi; //at cuttent spend rate
@@ -54,10 +54,10 @@ var etc = parseInt(document.getElementById("etc").value);
         // eac4 = ac + etc;
         vac = bac-eac1;
         tcpi = (bac-ev)/(bac-ac);
-        } 
-  
+        }
+
   if ((etc == 0)||(etc == null)||(isNaN(etc))){
-    var eac4 = "No ETC data input"
+    var eac4 = "No ETC input data"
   }
   else {
     eac4 = ac + etc;
@@ -65,48 +65,48 @@ var etc = parseInt(document.getElementById("etc").value);
   document.getElementById("eac1").innerHTML = eac1;
   document.getElementById("eac2").innerHTML = eac2;
   document.getElementById("eac3").innerHTML = eac3;
-  document.getElementById("eac4").innerHTML = eac4;  
-  document.getElementById("vac").innerHTML = vac;  
+  document.getElementById("eac4").innerHTML = eac4;
+  document.getElementById("vac").innerHTML = vac;
   document.getElementById("tcpi").innerHTML = tcpi;
-  
-  
+
+
   if (sv >= 0) {
     document.getElementById("svstat").style.color = "green";
     document.getElementById("svstat").className = "stat";
-    document.getElementById("svstat").innerHTML = "&#9745";    
+    document.getElementById("svstat").innerHTML = "&#9745";
   }
   else {
     document.getElementById("svstat").style.color = "red";
     document.getElementById("svstat").className = "stat";
     document.getElementById("svstat").innerHTML = "&#10060";
   }
-  
+
   if (cv >= 0) {
     document.getElementById("cvstat").style.color = "green";
     document.getElementById("cvstat").className = "stat";
-    document.getElementById("cvstat").innerHTML = "&#9745";    
+    document.getElementById("cvstat").innerHTML = "&#9745";
   }
   else {
     document.getElementById("cvstat").style.color = "red";
     document.getElementById("cvstat").className = "stat";
     document.getElementById("cvstat").innerHTML = "&#10060";
   }
-  
+
   if (spi >= 1) {
     document.getElementById("spistat").style.color = "green";
     document.getElementById("spistat").className = "stat";
-    document.getElementById("spistat").innerHTML = "&#9745";    
+    document.getElementById("spistat").innerHTML = "&#9745";
   }
   else {
     document.getElementById("spistat").style.color = "red";
     document.getElementById("spistat").className = "stat";
     document.getElementById("spistat").innerHTML = "&#10060";
   }
-  
+
   if (cpi >= 1) {
     document.getElementById("cpistat").style.color = "green";
     document.getElementById("cpistat").className = "stat";
-    document.getElementById("cpistat").innerHTML = "&#9745";    
+    document.getElementById("cpistat").innerHTML = "&#9745";
   }
   else {
     document.getElementById("cpistat").style.color = "red";
