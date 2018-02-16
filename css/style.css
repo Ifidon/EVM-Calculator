@@ -17,6 +17,12 @@ p {
   width: 500px;
 }
 
+.stat{
+  margin-left: 20px;
+  border: none;
+  font-size:30px;
+}
+
 /* input {
   display: inline-block
 } */
